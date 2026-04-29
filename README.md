@@ -30,9 +30,9 @@ automatically.
 
 ## Contributing
 
-Contributions welcome. Each skill lives in its own folder with a `SKILL.md`,
-a template, and at least one example. Open a PR with your skill folder and
-a one-line description for the table above.
+Contributions welcome. See [CONTRIBUTING.md](./CONTRIBUTING.md) for
+guidelines on adding skills, reporting issues, and the skill quality
+checklist.
 
 ---
 
