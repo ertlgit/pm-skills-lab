@@ -1,8 +1,8 @@
 ---
 name: decision-query
-description: Work with existing decision records in the /decisions/ folder. Check a PRD, proposal, OKR, or email for conflicts with prior decisions. Search records by topic, owner, or status. Surface decisions due for review. Status: planned — not yet implemented.
+description: "Work with existing decision records in the /decisions/ folder. Check a PRD, proposal, OKR, or email for conflicts with prior decisions. Search records by topic, owner, or status. Surface decisions due for review. Status: planned — not yet implemented."
 status: planned
-license: MIT — see LICENSE in pm-skills-lab repo
+license: "MIT — see LICENSE in pm-skills-lab repo"
 ---
 
 # decision-query Skill for Claude Code
