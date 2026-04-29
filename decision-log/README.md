@@ -63,6 +63,10 @@ the output and writes the file.
 draft). Claude extracts the decision, populates all fields it can confirm,
 marks uncertain fields `[NEEDS REVIEW]`, and writes the file.
 
+When source material is thin, the skill marks uncertain fields
+[NEEDS REVIEW] rather than generating plausible-sounding but
+unreliable content. This is intentional.
+
 ---
 
 ## What gets logged
