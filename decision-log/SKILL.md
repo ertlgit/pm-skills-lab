@@ -100,6 +100,9 @@ create it before writing the file.
 Place output in /decisions/ if the folder exists or after creating it.
 Otherwise place in the current working directory.
 
+Never create or modify a decisions.md or index file. Individual
+decision files only.
+
 ## Mandatory fields (populate all eight)
 
 `decision-id`

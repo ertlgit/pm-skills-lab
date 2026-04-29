@@ -31,27 +31,21 @@ rationale as specified in the template.
 **Fix:** Strengthen the output order instruction in SKILL.md. Specify the
 exact section sequence explicitly.
 
-### BL-019 — Context field fabrication in agent and manual modes
-**Finding:** Skill invented context content not present in source
-material without marking it [NEEDS REVIEW]. No-fabrication rule
-in SKILL.md covers rationale and options but not context.
-**Action:** Add explicit no-fabrication rule for context field.
-Mark [NEEDS REVIEW - context inferred] when context is thin.
+### BL-020 — Owner [NEEDS REVIEW] flag applied inconsistently across runs
+**Finding:** Two runs on identical ambiguous input produced different
+owner field behavior. First run: `Mia [NEEDS REVIEW - Mia led the
+conversation but ownership was not explicitly assigned]`. Second run:
+`Mia (led the conversation)` with no [NEEDS REVIEW] flag. The SKILL.md
+instruction is correct but Claude applies it inconsistently.
+**Action:** Strengthen the owner field rule in SKILL.md to make the
+[NEEDS REVIEW] flag mandatory when ownership is implied but not
+explicitly confirmed. Add example to the owner field definition.
+**Priority:** P1 — affects output trustworthiness across runs.
+**Status:** open
 
 ---
 
 ## P2 — Decide before publishing
-
-### BL-004 — decisions.md index table — keep or suppress
-**Finding:** Skill generated a decisions.md index table linking to
-individual decision files. This was not specified in SKILL.md but is
-potentially useful.
-**Decision needed:** Keep it as designed behavior or suppress it.
-**Options:**
-- Keep: add explicit instruction to SKILL.md to maintain a decisions.md
-  index, update template with index format
-- Suppress: add explicit instruction to never create or modify a
-  decisions.md file
 
 ---
 
@@ -81,6 +75,8 @@ shell alias shortcut. Draft agreed, not yet committed.
 ## Decisions made during testing
 
 <!-- v1.0.0 — 2026-04-28 -->
+- BL-004 — decisions.md index table — keep or suppress (done)
+- BL-019 — Context field fabrication in agent and manual modes (done)
 - BL-006 — Significance gate behavior redesigned (done)
 - BL-003 — File creation instruction too weak (done)
 - BL-005 — Installation instruction incorrect in README (done)
