@@ -1,3 +1,9 @@
+---
+name: decision-log
+description: Create structured product decision records committed to git. Use this skill when the user wants to log, record, or document a product decision, capture what was decided and why, or extract a decision from meeting notes, Slack threads, or other unstructured input. Supports manual input and agent extraction modes.
+license: MIT — see LICENSE in pm-skills-lab repo
+---
+
 # Decision Log Skill for Claude Code
 
 ## What this skill does

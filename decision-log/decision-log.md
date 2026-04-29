@@ -7,16 +7,16 @@
 
 ---
 
-## Decision
+## decision
 
 <!-- One sentence. Start with a verb. What was decided. -->
 
-## Context
+## context
 
 <!-- 2-5 sentences. What forced this decision. The constraint or problem
      that made standing still not an option. -->
 
-## Options Considered
+## options-considered
 
 **Option A: [Label]**
 <!-- One sentence description. -->
@@ -26,11 +26,11 @@
 
 <!-- Add Option C etc. if relevant. -->
 
-## Chosen Option
+## chosen-option
 
 <!-- Option label only. Informal or free-form labels are acceptable. -->
 
-## Rationale
+## rationale
 
 <!-- Why the chosen option won. What the alternatives lacked.
      Mark [NEEDS REVIEW - rationale inferred from context] if extracted
@@ -40,7 +40,7 @@
 ---
 
 <!-- AGENT MODE ONLY: remove this block if filling in manually -->
-## Source
+## source
 
 - **source-type:** meeting-notes / slack-thread / prd-draft / email / other
 - **source-date:** YYYY-MM-DD
@@ -50,7 +50,7 @@
 ---
 
 <!-- SUPERSESSION: complete only if status is superseded -->
-## Supersession
+## supersession
 
 - **superseded-by:** DL-YYYY-MM-NNN or link
 - **superseded-date:** YYYY-MM-DD
@@ -63,31 +63,31 @@ OPTIONAL EXTENSION BLOCK
 Uncomment the fields your team needs.
 Listed in order of downstream value for PM teams.
 
-## Follow-up Actions
+## follow-up-actions
 - [ ] Action description — Owner — Due date
 - [ ] Action description — Owner — Due date
 
-## Assumptions
+## assumptions
 - What must remain true for this decision to hold.
 
-## Risks
+## risks
 - Risk description — Mitigation (if known)
 
-## Linked Artifacts
+## linked-artifacts
 - [Label](url or path)
 
-## Review Date
+## review-date
 YYYY-MM-DD — Reason for scheduled review.
 
-## Stakeholders Informed
+## stakeholders-informed
 - Name / team — date notified
 
-## Regulatory Flag
+## regulatory-flag
 true / false — Note if true.
 
-## AI Decision Mode
+## ai-decision-mode
 human / ai-assisted / ai-recommended
 
-## AI Input Summary
+## ai-input-summary
 One sentence on what AI contributed to this decision.
 -->
