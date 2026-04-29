@@ -68,18 +68,22 @@ before generating a record.
 
 ## Significance gate
 
-Before generating a record, check whether the decision meets at least
-one of these criteria:
+Agent mode only. This gate does not apply in manual mode.
+
+In agent mode, before generating a record for an extracted decision,
+check whether the decision meets at least one of these criteria:
 - Hard to reverse without meaningful cost or delay
 - Cross-functional (affects more than one team or system)
 - Involves a real trade-off between named alternatives
 - Will likely be revisited or questioned later
 - Has compliance, regulatory, or security implications
 
-If none apply, ask the user: "This decision may not warrant a formal log
-entry. Do you want to create one anyway?" Generate the record only after
-explicit confirmation. Never generate silently for low-significance
-decisions.
+If none apply, ask the user: "I found a decision in the source material
+but it may not warrant a formal log entry. Do you want to create one
+anyway?" Generate only after explicit confirmation.
+
+In manual mode, the user has already made the significance judgment
+by invoking the skill. Generate immediately without applying this gate.
 
 ## Output format
 
@@ -116,7 +120,11 @@ When status is superseded, the superseded-by field becomes mandatory.
 
 `context`
 Two to five sentences. What forced this decision. The constraint, event,
-or problem that made standing still not an option.
+or problem that made standing still not an option. Populate only from
+information present in the source material or provided by the user.
+If context is thin or absent, write what can be confirmed and mark
+the field [NEEDS REVIEW - context inferred from limited source material].
+Never invent a business justification that was not stated.
 
 `options-considered`
 A list with at least two entries. Each entry gets a short label and one
@@ -201,4 +209,6 @@ Verify:
 - owner is identified or marked [NEEDS REVIEW]
 - all ambiguous fields are marked [NEEDS REVIEW], not left blank
   or fabricated
-- significance gate was applied and confirmed before generating
+- in agent mode: significance gate was applied before generating
+- in manual mode: significance gate skipped, user invocation is
+  sufficient confirmation

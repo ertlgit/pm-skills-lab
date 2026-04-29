@@ -31,6 +31,13 @@ rationale as specified in the template.
 **Fix:** Strengthen the output order instruction in SKILL.md. Specify the
 exact section sequence explicitly.
 
+### BL-019 — Context field fabrication in agent and manual modes
+**Finding:** Skill invented context content not present in source
+material without marking it [NEEDS REVIEW]. No-fabrication rule
+in SKILL.md covers rationale and options but not context.
+**Action:** Add explicit no-fabrication rule for context field.
+Mark [NEEDS REVIEW - context inferred] when context is thin.
+
 ---
 
 ## P2 — Decide before publishing
@@ -49,11 +56,6 @@ potentially useful.
 ---
 
 ## P3 — Nice to have for v1.1
-
-### BL-006 — Significance gate not yet tested
-**Finding:** No test has been run to confirm the significance gate fires
-correctly on a low-significance decision.
-**Action:** Run significance gate test before publishing.
 
 ### BL-007 — Supersession behavior not yet tested
 **Finding:** No test has been run on a superseded decision.
@@ -79,6 +81,7 @@ shell alias shortcut. Draft agreed, not yet committed.
 ## Decisions made during testing
 
 <!-- v1.0.0 — 2026-04-28 -->
+- BL-006 — Significance gate behavior redesigned (done)
 - BL-003 — File creation instruction too weak (done)
 - BL-005 — Installation instruction incorrect in README (done)
 - BL-009 — YAML frontmatter added to SKILL.md to fix activation (done)
