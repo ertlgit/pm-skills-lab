@@ -18,6 +18,30 @@ Works in two modes:
 - Agent: Claude extracts from unstructured input (meeting notes, Slack
   threads, PRD drafts, discussion summaries)
 
+## How mode is determined
+
+Mode is detected automatically from the invocation pattern.
+
+Manual mode is active when:
+- The user provides the decision details directly in their message
+- Invocation follows the pattern: "log decision: [decision details]"
+
+Agent mode is active when:
+- The user pastes unstructured source material for extraction
+- Invocation follows the pattern: "log decision from [source]: [paste]"
+- Source type signals are present: "from slack", "from meeting notes",
+  "from this thread", "from the transcript", "extract decision from"
+
+When mode is ambiguous, default to agent mode if the input contains
+more than two sentences of unstructured text. Default to manual mode
+if the input is a single structured statement.
+
+Before generating the record, always confirm the detected mode to the
+user in one line:
+- Manual mode: "Creating decision record from your input."
+- Agent mode: "Extracting decision from [source type]. Populating
+  fields from source material, marking uncertain fields [NEEDS REVIEW]."
+
 ## When to activate this skill
 
 Activate only when the input contains decision-bound language, meaning
@@ -63,8 +87,14 @@ Always produce a markdown file using the decision log template.
 File naming convention: DL-YYYY-MM-NNN-short-slug.md
 Example: DL-2026-04-001-build-vs-buy-auth.md
 
-Place output in /decisions/ if the folder exists, otherwise in the
-current working directory.
+Always create a new individual file per decision. Never append to,
+overwrite, or modify any existing file. If a file with the same
+DL-YYYY-MM-NNN-slug.md name already exists, increment NNN until
+the filename is unique. If a /decisions/ folder does not exist,
+create it before writing the file.
+
+Place output in /decisions/ if the folder exists or after creating it.
+Otherwise place in the current working directory.
 
 ## Mandatory fields (populate all eight)
 

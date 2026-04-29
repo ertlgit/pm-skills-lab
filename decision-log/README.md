@@ -64,7 +64,7 @@ draft). Claude extracts the decision, populates all fields it can confirm,
 marks uncertain fields `[NEEDS REVIEW]`, and writes the file.
 
 When source material is thin, the skill marks uncertain fields
-[NEEDS REVIEW] rather than generating plausible-sounding but
+`[NEEDS REVIEW]` rather than generating plausible-sounding but
 unreliable content. This is intentional.
 
 ---
@@ -127,14 +127,47 @@ This keeps `/decisions/` signal-rich rather than a dump of every minor call.
 
 ## Installation
 
-Copy `SKILL.md` into your Claude Code skills folder:
+### Quick install (recommended)
+
+Install the skill directly from GitHub without cloning the repo:
 
 ```bash
-cp SKILL.md .claude/skills/decision-log.md
+mkdir -p ~/.claude/skills/decision-log && \
+curl -o ~/.claude/skills/decision-log/SKILL.md \
+https://raw.githubusercontent.com/ertlgit/pm-skills-lab/main/decision-log/SKILL.md
 ```
 
-The template and examples are included for reference. Claude Code will
-activate the skill when it detects decision-bound language in your request.
+Claude Code will activate the skill automatically when it detects
+decision-bound language in your request.
+
+### Manual install
+
+If you have cloned the repo locally:
+
+```bash
+mkdir -p ~/.claude/skills/decision-log
+cp decision-log/SKILL.md ~/.claude/skills/decision-log/SKILL.md
+```
+
+### Verify installation
+
+Open Claude Code in any project folder and run:
+
+```
+/skills
+```
+
+You should see `decision-log` listed under available skills.
+
+### Update to latest version
+
+To update the skill after changes are published:
+
+```bash
+curl -o ~/.claude/skills/decision-log/SKILL.md \
+https://raw.githubusercontent.com/ertlgit/pm-skills-lab/main/decision-log/SKILL.md
+```
+
 
 ---
 
