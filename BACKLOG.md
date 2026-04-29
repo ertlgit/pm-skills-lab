@@ -29,16 +29,6 @@ No open items.
 
 ## P3 — Nice to have for v1.1
 
-### BL-007 — Supersession behavior not yet tested
-**Finding:** No test has been run on a superseded decision.
-**Action:** Run supersession test before publishing or document as
-known untested behavior in README.
-
-### BL-008 — Multi-decision extraction not yet tested
-**Finding:** No test has been run on a source containing multiple
-decisions to confirm sequential NNN file creation.
-**Action:** Test or document as known untested.
-
 ### BL-018 — Workflow section not yet added to README
 **Finding:** PMs working across multiple projects face friction from the
 `cd` into project folder requirement. No workflow guidance exists in the
