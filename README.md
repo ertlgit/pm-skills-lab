@@ -34,6 +34,8 @@ Contributions welcome. See [CONTRIBUTING.md](./CONTRIBUTING.md) for
 guidelines on adding skills, reporting issues, and the skill quality
 checklist.
 
+Known issues and planned improvements are tracked in [BACKLOG.md](./BACKLOG.md).
+
 ---
 
 ## License
