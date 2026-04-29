@@ -44,7 +44,7 @@ Slack / docs / meeting notes / transcripts
 Claude Code · decision-log skill
         ↓
 /decisions/DL-YYYY-MM-NNN-slug.md  (committed to git)
-        ↓
+        ↓  (linked manually)
 Jira · Linear · Notion · PRDs · roadmap tools · governance docs
 ```
 
@@ -122,6 +122,44 @@ Not every decision warrants a log entry. The skill checks whether the
 decision is hard to reverse, cross-functional, involves a real trade-off,
 or will likely be revisited. For borderline cases it asks before generating.
 This keeps `/decisions/` signal-rich rather than a dump of every minor call.
+
+---
+
+## What to do with your decisions folder
+
+Over time your `/decisions/` folder becomes a searchable record of why
+your product is the way it is. Here is how PM teams use it in practice.
+
+**Before a planning meeting**
+Pull up decisions related to the topic on the agenda. Paste relevant
+records into the meeting doc as constraints. Stop re-litigating settled
+ground before the meeting starts.
+
+**When writing a PRD or spec**
+Reference relevant decision records as the rationale for constraints and
+scope boundaries. Link from the PRD to the decision file. Future readers
+will understand why, not just what.
+
+**When onboarding a new team member**
+Point them to the decisions folder before their first sprint. Context
+that took months to accumulate transfers in an afternoon.
+
+**When a decision needs to change**
+Use the supersession workflow: find the original record, set status to
+`superseded`, link the new decision record that replaces it. The history
+stays intact.
+
+**When something feels wrong**
+Before committing to a direction, scan the decisions folder manually or
+paste your proposal into Claude Code and ask: "Does anything in
+/decisions/ conflict with this?" That is the fastest way to catch
+contradictions before they ship.
+
+**What this folder is not**
+It is not a meeting notes archive. It is not a task list. It is not a
+PRD. It captures the moment a choice was made between named alternatives
+and why. Keep it signal-rich by using the significance gate and only
+logging decisions that will matter later.
 
 ---
 

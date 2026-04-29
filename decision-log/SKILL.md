@@ -103,6 +103,36 @@ Otherwise place in the current working directory.
 Never create or modify a decisions.md or index file. Individual
 decision files only.
 
+Always use bold field syntax for the header block and section headers.
+Do not use YAML frontmatter with --- delimiters. Do not use tables.
+Output format must match the template exactly.
+
+Header block format:
+**decision-id:** DL-YYYY-MM-NNN-short-slug
+**date:** YYYY-MM-DD
+**status:** accepted
+**owner:** Name or role
+
+Section header format:
+## decision
+## context
+## options-considered
+## chosen-option
+## rationale
+## source (agent mode only)
+## supersession (if applicable)
+
+Always produce sections in this exact sequence:
+1. Header block (decision-id, date, status, owner)
+2. ## decision
+3. ## context
+4. ## options-considered
+5. ## chosen-option
+6. ## rationale
+7. ## source (agent mode only, remove if manual)
+8. ## supersession (only if status is superseded)
+9. Optional extension block (commented out unless requested)
+
 ## Mandatory fields (populate all eight)
 
 `decision-id`
@@ -149,6 +179,12 @@ context]. Never fabricate rationale to fill the field.
 The person accountable for this decision. Not the full stakeholder list.
 If not stated in source material, mark [NEEDS REVIEW - owner not
 identified].
+If ownership is implied but not explicitly confirmed (e.g. "led the
+conversation", "was driving this", "will handle it"), populate the
+name and add [NEEDS REVIEW - ownership implied but not explicitly
+confirmed]. Never drop the [NEEDS REVIEW] flag when ownership is
+ambiguous.
+Example: `Mia [NEEDS REVIEW - ownership implied but not explicitly confirmed]`
 
 ## Agent mode additional rules
 
