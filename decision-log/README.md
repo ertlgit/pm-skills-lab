@@ -69,6 +69,42 @@ unreliable content. This is intentional.
 
 ---
 
+## Recommended invocation
+
+For consistent activation, use one of these phrases when calling the skill:
+
+**Manual mode:**
+
+```
+log decision: [your decision details here]
+```
+
+**Agent mode:**
+
+```
+log decision from [source]: [paste your input here]
+```
+
+Examples:
+
+```
+log decision: we chose Stripe over Paddle for payments, main reason was
+developer documentation quality, owner is CTO
+```
+
+```
+log decision from slack: [paste thread]
+```
+
+```
+log decision from meeting notes: [paste notes]
+```
+
+Using a consistent phrase helps Claude activate the skill reliably and
+signals clearly to teammates what invocation pattern to follow.
+
+---
+
 ## What gets logged
 
 Eight mandatory fields per record: decision-id, decision-statement, status,
