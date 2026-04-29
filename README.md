@@ -24,14 +24,9 @@ process overhead.
 
 Planned skills:
 
-- **decision-check** — validate a PRD, OKR, proposal, or email draft
-  against your existing decision records. Surfaces conflicts, dependencies,
-  and constraints before you commit to a direction.
-- **decision-review** — scan your decisions folder for records with a
-  `review-date` approaching or past. Prompts you to confirm, update, or
-  supersede.
-- **decision-search** — query your decisions folder by topic, owner,
-  status, date range, or regulatory flag.
+- **decision-query** — work with your existing decision records.
+  Check a PRD or proposal for conflicts, search by topic or owner,
+  or surface decisions due for review. Companion skill to decision-log.
 
 Contributions welcome. See [CONTRIBUTING.md](./CONTRIBUTING.md).
 

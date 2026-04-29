@@ -1,11 +1,11 @@
 ---
-name: decision-check
-description: Validate a PRD, proposal, OKR, or email draft against existing decision records in the /decisions/ folder. Use this skill when the user wants to check whether a piece of content conflicts with or depends on prior product decisions. Status: planned — not yet implemented.
+name: decision-query
+description: Work with existing decision records in the /decisions/ folder. Check a PRD, proposal, OKR, or email for conflicts with prior decisions. Search records by topic, owner, or status. Surface decisions due for review. Status: planned — not yet implemented.
 status: planned
 license: MIT — see LICENSE in pm-skills-lab repo
 ---
 
-# decision-check Skill for Claude Code
+# decision-query Skill for Claude Code
 
 ## Status
 
@@ -22,30 +22,44 @@ proposed approach.
 
 ## What this skill will do
 
-Scan the `/decisions/` folder and check a piece of PM content against
-existing decision records. Surfaces conflicts, dependencies, and
-constraints the PM should be aware of before committing to a direction.
+Work with existing decision records in the `/decisions/` folder across
+three modes detected automatically from the invocation:
+
+- **Check** — validate a PRD, OKR, proposal, or email draft against
+  existing records. Surfaces conflicts, dependencies, and constraints.
+- **Search** — query records by topic, owner, status, date range, or
+  regulatory flag. Returns matching records with one-line summaries.
+- **Review** — scan for records with a `review-date` approaching or
+  past. Prompts you to confirm, update, or supersede.
 
 Designed for use when:
 - Writing a PRD or spec
 - Crafting OKR themes or strategic proposals
-- Drafting an email or proposal that involves product direction
-- Reviewing a roadmap item before committing it to a sprint
+- Reviewing roadmap items before committing to a sprint
+- Onboarding a new team member to existing product constraints
 
 ---
 
 ## Planned behavior
 
-**Input:** A PRD section, OKR draft, proposal, or email. Plus the path
-to the decisions folder.
+**Invocation patterns:**
 
-**Output:** A structured report covering:
-- Conflicts: content that directly contradicts an accepted decision
-- Dependencies: content that builds on or assumes a prior decision
-- Constraints: accepted decisions that limit the scope of the proposal
-- Clear: areas where no relevant decisions were found
+```
+check decisions: [paste PRD, OKR, proposal, or email]
+search decisions: [topic, owner name, status, or keyword]
+review decisions
+```
 
-**Example output format:**
+**Check mode output:** conflicts, dependencies, constraints, and clear
+areas as a structured scannable report.
+
+**Search mode output:** matching decision records with decision-id,
+date, decision-statement, and status per result.
+
+**Review mode output:** records where review-date is past or within
+30 days, with a prompt to confirm, update, or supersede each.
+
+**Check mode example:**
 
 ```
 Checking against 12 decision records in /decisions/
