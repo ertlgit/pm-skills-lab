@@ -1,4 +1,13 @@
-<!-- Last assigned ID: BL-015 — increment from here for new items -->
+<!-- CHANGELOG NOTE
+When preparing a release, check all items marked (done) in the
+"Decisions made during testing" section below. Any item that changed
+user-visible behavior (output format, field rules, activation logic,
+file naming, installation) belongs in the CHANGELOG as a Fixed or
+Added entry. Documentation-only changes (README edits, invocation
+examples, workflow guidance) do not need a CHANGELOG entry.
+Last release: v1.0.0 — 2026-04-28
+Update "Last release" line each time a new version is tagged and pushed.
+-->
 
 # decision-log backlog
 
@@ -22,12 +31,6 @@ rationale as specified in the template.
 **Fix:** Strengthen the output order instruction in SKILL.md. Specify the
 exact section sequence explicitly.
 
-### BL-003 — File creation instruction too weak
-**Finding:** Skill tried to overwrite an existing decisions.md instead of
-creating a new individual DL-YYYY-MM-NNN-slug.md file.
-**Fix:** Add explicit instruction to SKILL.md: never append to or overwrite
-an existing file, always create a new individual file per decision.
-
 ---
 
 ## P2 — Decide before publishing
@@ -42,13 +45,6 @@ potentially useful.
   index, update template with index format
 - Suppress: add explicit instruction to never create or modify a
   decisions.md file
-
-### BL-005 — Installation instruction incorrect in README
-**Finding:** README instructs users to copy SKILL.md as a flat file.
-Claude Code requires SKILL.md inside a named subfolder.
-**Fix:** Update installation instruction in decision-log/README.md and
-root README.md to reflect correct folder structure.
-Status: identified, fix drafted, not yet committed.
 
 ---
 
@@ -69,14 +65,28 @@ known untested behavior in README.
 decisions to confirm sequential NNN file creation.
 **Action:** Test or document as known untested.
 
+### BL-018 — Workflow section not yet added to README
+**Finding:** PMs working across multiple projects face friction from the
+`cd` into project folder requirement. No workflow guidance exists in the
+README to help PMs set up a repeatable decision logging routine.
+**Action:** Add a Workflows section to decision-log/README.md covering
+three patterns: project-anchored, centralized decisions folder, and
+shell alias shortcut. Draft agreed, not yet committed.
+**Status:** open
+
 ---
 
 ## Decisions made during testing
 
+<!-- v1.0.0 — 2026-04-28 -->
+- BL-003 — File creation instruction too weak (done)
+- BL-005 — Installation instruction incorrect in README (done)
 - BL-009 — YAML frontmatter added to SKILL.md to fix activation (done)
 - BL-010 — Section headers normalized to lowercase (done)
 - BL-011 — Template optional block headers normalized to lowercase (done)
 - BL-012 — [NEEDS REVIEW] wording normalized (done)
-- BL-013 — Installation path corrected from flat file to subfolder (fix drafted)
+- BL-013 — Installation path corrected from flat file to subfolder (done)
 - BL-014 — Recommended invocation section added to README (done)
 - BL-015 — [NEEDS REVIEW] intent clarified in README (done)
+- BL-016 — mode detection section added to SKILL.md (done)
+- BL-017 — quick install curl command added to README (done)

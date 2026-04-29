@@ -168,7 +168,6 @@ curl -o ~/.claude/skills/decision-log/SKILL.md \
 https://raw.githubusercontent.com/ertlgit/pm-skills-lab/main/decision-log/SKILL.md
 ```
 
-
 ---
 
 ## Usage examples
