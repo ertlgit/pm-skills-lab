@@ -12,7 +12,7 @@ activates automatically when it detects the right context in your request.
 | Skill | What it does | Status |
 |-------|-------------|--------|
 | [decision-log](./decision-log/) | Turns product decisions into structured, searchable markdown records committed to git | Available |
-| [decision-check](./decision-check/) | Validates PRDs, OKRs, and proposals against existing decision records | Planned |
+| [decision-query](./decision-query/) | Validates PRDs, OKRs, and proposals against existing decision records | Planned |
 
 ---
 
