@@ -26,6 +26,7 @@ or as part of the BL-018 workflow section.
 
 ## Decisions made during testing
 
+- BL-028 — decision-query skill shipped: check, search, and review modes (done)
 - BL-027 — DECISIONS.md default output mode added, individual files as opt-in (done)
 - BL-024 — What to do with your decisions folder section added (done)
 - BL-025 — Toolchain diagram annotation added (done)

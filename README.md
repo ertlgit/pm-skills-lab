@@ -12,7 +12,7 @@ activates automatically when it detects the right context in your request.
 | Skill | What it does | Status |
 |-------|-------------|--------|
 | [decision-log](./decision-log/) | Turns product decisions into structured, searchable markdown records committed to git | Available |
-| [decision-query](./decision-query/) | Validates PRDs, OKRs, and proposals against existing decision records | Planned |
+| [decision-query](./decision-query/) | Check PRDs and proposals against existing decisions, search records, and surface decisions due for review | Available |
 
 ---
 
@@ -23,10 +23,9 @@ problem is validated and a skill can solve it reliably without adding
 process overhead.
 
 Planned skills:
-
-- **decision-query** — work with your existing decision records.
-  Check a PRD or proposal for conflicts, search by topic or owner,
-  or surface decisions due for review. Companion skill to decision-log.
+- **MCP integration** — connect decision-log to Slack and Linear
+  via MCP for fully automated capture and ticketing. Planned after
+  adoption signal from real PM teams.
 
 Contributions welcome. See [CONTRIBUTING.md](./CONTRIBUTING.md).
 
