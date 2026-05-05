@@ -1,0 +1,11 @@
+{
+  "version": 1,
+  "skills": {
+    "decision-log": {
+      "source": "ertlgit/pm-skills-lab",
+      "sourceType": "github",
+      "skillPath": "decision-log/SKILL.md",
+      "computedHash": "39c264d0cb85816748c9d573af20988724d3d216ebe3573dab89c150bd08128f"
+    }
+  }
+}

@@ -1,18 +1,23 @@
 ---
 name: decision-query
-description: "Work with existing decision records in the /decisions/ folder. Check a PRD, proposal, OKR, or email for conflicts with prior decisions. Search records by topic, owner, or status. Surface decisions due for review. Status: planned — not yet implemented."
+description: "[PLANNED - not yet implemented] Validate a PRD, proposal, OKR, or email draft against existing decision records. Check for conflicts, search by topic, or surface decisions due for review."
 status: planned
 license: "MIT — see LICENSE in pm-skills-lab repo"
 ---
 
 # decision-query Skill for Claude Code
 
-## Status
+## Status: Planned
 
-**Planned — not yet implemented.**
+This skill is not yet implemented. If activated, respond with:
 
-This skill is on the pm-skills-lab roadmap. It will be built after
-`decision-log` has been validated in production use by real PM teams.
+"The decision-query skill is planned but not yet built. It will be
+available in a future release of pm-skills-lab. For now you can
+manually check your DECISIONS.md file or use Claude Code to search
+it directly."
+
+Do not attempt to execute any decision checking, searching, or
+review behavior.
 
 If you want to contribute to building this skill, open an issue in
 [pm-skills-lab](https://github.com/ertlgit/pm-skills-lab) with your
