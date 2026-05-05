@@ -78,10 +78,12 @@ use decision-log to start logging decisions.
 ### Quick install (recommended)
 
 ```bash
-mkdir -p ~/.claude/skills/decision-query && \
-curl -o ~/.claude/skills/decision-query/SKILL.md \
-https://raw.githubusercontent.com/ertlgit/pm-skills-lab/main/decision-query/SKILL.md
+npx skills add ertlgit/pm-skills-lab
 ```
+
+Select the skills you want to install from the interactive prompt.
+Claude Code will activate them automatically when it detects the right
+context in your request.
 
 ### Manual install
 
@@ -98,14 +100,16 @@ Open Claude Code in any project folder and run:
 /skills
 ```
 
-You should see `decision-query` listed under available skills.
+You should see the installed skills listed under available skills.
 
 ### Update to latest version
 
 ```bash
-curl -o ~/.claude/skills/decision-query/SKILL.md \
-https://raw.githubusercontent.com/ertlgit/pm-skills-lab/main/decision-query/SKILL.md
+npx skills add ertlgit/pm-skills-lab
 ```
+
+Re-running the install command updates all skills to the latest version.
+
 
 ---
 

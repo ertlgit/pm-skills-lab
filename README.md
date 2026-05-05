@@ -33,14 +33,13 @@ Contributions welcome. See [CONTRIBUTING.md](./CONTRIBUTING.md).
 
 ## How to install a skill
 
-Copy the skill's `SKILL.md` into your Claude Code skills folder:
-
 ```bash
-cp decision-log/SKILL.md .claude/skills/decision-log.md
+npx skills add ertlgit/pm-skills-lab
 ```
 
-Repeat for each skill you want to activate. Claude Code will pick it up
-automatically.
+Select which skills to install from the interactive prompt. Claude Code
+activates them automatically when it detects the right context in your
+request. Re-run the same command to update to the latest version.
 
 ---
 

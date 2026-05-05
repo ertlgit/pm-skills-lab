@@ -213,20 +213,15 @@ logging decisions that will matter later.
 
 ### Quick install (recommended)
 
-Install the skill directly from GitHub without cloning the repo:
-
 ```bash
-mkdir -p ~/.claude/skills/decision-log && \
-curl -o ~/.claude/skills/decision-log/SKILL.md \
-https://raw.githubusercontent.com/ertlgit/pm-skills-lab/main/decision-log/SKILL.md
+npx skills add ertlgit/pm-skills-lab
 ```
 
-Claude Code will activate the skill automatically when it detects
-decision-bound language in your request.
+Select the skills you want to install from the interactive prompt.
+Claude Code will activate them automatically when it detects the right
+context in your request.
 
 ### Manual install
-
-If you have cloned the repo locally:
 
 ```bash
 mkdir -p ~/.claude/skills/decision-log
@@ -241,16 +236,16 @@ Open Claude Code in any project folder and run:
 /skills
 ```
 
-You should see `decision-log` listed under available skills.
+You should see the installed skills listed under available skills.
 
 ### Update to latest version
 
-To update the skill after changes are published:
-
 ```bash
-curl -o ~/.claude/skills/decision-log/SKILL.md \
-https://raw.githubusercontent.com/ertlgit/pm-skills-lab/main/decision-log/SKILL.md
+npx skills add ertlgit/pm-skills-lab
 ```
+
+Re-running the install command updates all skills to the latest version.
+
 
 ---
 
@@ -298,3 +293,18 @@ decision-log/
     ├── decision-log-sample.md
     └── decision-log-agent-sample.md
 ```
+---
+
+## Pair with decision-query
+
+decision-log creates and updates records. To query them, use the
+[decision-query](../decision-query/) skill.
+
+```
+check decisions: [paste PRD, OKR, proposal, or email]
+search decisions: [topic, owner name, keyword, or status]
+review decisions
+```
+
+decision-query reads both `DECISIONS.md` and individual files in
+`/decisions/` automatically. No configuration needed.
