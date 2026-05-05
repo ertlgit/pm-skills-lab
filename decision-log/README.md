@@ -69,6 +69,52 @@ unreliable content. This is intentional.
 
 ---
 
+## Output modes
+
+**DECISIONS.md (default)** — appends each decision as a new section to
+a single `DECISIONS.md` file in the project root. Simpler to scan,
+easier to share, and works as an automatic context file when referenced
+in `CLAUDE.md`.
+
+**Individual files** — creates one `DL-YYYY-MM-NNN-slug.md` file per
+decision in a `/decisions/` subfolder. Better for teams using git who
+want per-decision diff history and stable URLs for linking from PRDs
+or tickets.
+
+Default invocation uses DECISIONS.md:
+
+```
+log decision: [input]
+log decision from slack: [input]
+```
+
+Invoke individual file mode explicitly:
+
+```
+log decision (new file): [input]
+```
+
+---
+
+## Claude Code integration tip
+
+Reference `DECISIONS.md` in your project's `CLAUDE.md` to load all
+decisions as context at the start of every Claude Code session:
+
+```
+## Decision log
+All product decisions for this project are in DECISIONS.md.
+Before generating any PRD content, roadmap suggestion, or technical
+recommendation, read DECISIONS.md and flag any conflicts with existing
+decisions.
+```
+
+This turns your decision log into an active constraint layer. Claude
+Code will automatically surface conflicts between new work and prior
+decisions without you needing to invoke decision-query manually.
+
+---
+
 ## Recommended invocation
 
 For consistent activation, use one of these phrases when calling the skill:

@@ -36,11 +36,14 @@ When mode is ambiguous, default to agent mode if the input contains
 more than two sentences of unstructured text. Default to manual mode
 if the input is a single structured statement.
 
-Before generating the record, always confirm the detected mode to the
-user in one line:
-- Manual mode: "Creating decision record from your input."
-- Agent mode: "Extracting decision from [source type]. Populating
-  fields from source material, marking uncertain fields [NEEDS REVIEW]."
+Before generating the record, always confirm the detected mode and
+output destination to the user in one line:
+- Manual mode (DECISIONS.md): "Appending decision record to DECISIONS.md."
+- Manual mode (individual file): "Creating individual decision file."
+- Agent mode (DECISIONS.md): "Extracting decision from [source type] and
+  appending to DECISIONS.md. Marking uncertain fields [NEEDS REVIEW]."
+- Agent mode (individual file): "Extracting decision from [source type]
+  and creating individual file. Marking uncertain fields [NEEDS REVIEW]."
 
 ## When to activate this skill
 
@@ -87,51 +90,108 @@ by invoking the skill. Generate immediately without applying this gate.
 
 ## Output format
 
-Always produce a markdown file using the decision log template.
-File naming convention: DL-YYYY-MM-NNN-short-slug.md
-Example: DL-2026-04-001-build-vs-buy-auth.md
+Two output modes are supported. Default is DECISIONS.md.
 
-Always create a new individual file per decision. Never append to,
-overwrite, or modify any existing file. If a file with the same
-DL-YYYY-MM-NNN-slug.md name already exists, increment NNN until
-the filename is unique. If a /decisions/ folder does not exist,
-create it before writing the file.
+### Default mode: DECISIONS.md
 
-Place output in /decisions/ if the folder exists or after creating it.
-Otherwise place in the current working directory.
+Append the new decision as a section to DECISIONS.md in the project
+root. If DECISIONS.md does not exist, create it with a header before
+appending the first entry.
 
-Never create or modify a decisions.md or index file. Individual
-decision files only.
+DECISIONS.md header (create once, never overwrite):
 
-Always use bold field syntax for the header block and section headers.
-Do not use YAML frontmatter with --- delimiters. Do not use tables.
-Output format must match the template exactly.
+```
+# Decision Log
 
-Header block format:
-**decision-id:** DL-YYYY-MM-NNN-short-slug
+This file is maintained by the decision-log skill.
+Reference it in CLAUDE.md to load decisions as project context.
+
+---
+```
+
+Each appended entry uses this structure:
+
+```
+## DL-YYYY-MM-NNN — short-slug
+
+**decision-id:** DL-YYYY-MM-NNN
 **date:** YYYY-MM-DD
 **status:** accepted
 **owner:** Name or role
 
-Section header format:
-## decision
-## context
-## options-considered
-## chosen-option
-## rationale
-## source (agent mode only)
-## supersession (if applicable)
+### decision
+[decision statement]
+
+### context
+[context]
+
+### options-considered
+[options]
+
+### chosen-option
+[chosen option]
+
+### rationale
+[rationale]
+
+---
+```
+
+Append new entries at the bottom. Never overwrite or reformat existing
+entries. Never delete the header block.
+
+NNN is a sequential counter. Scan DECISIONS.md for the highest existing
+DL-YYYY-MM-NNN value and increment by one. If no entries exist, start
+at 001.
+
+### Individual file mode
+
+Activated by explicit invocation:
+
+```
+log decision (new file): [input]
+```
+
+Creates an individual file named DL-YYYY-MM-NNN-short-slug.md in
+/decisions/ if the folder exists, otherwise in the current working
+directory. If /decisions/ does not exist, create it before writing.
+
+Use individual file mode when:
+- The team uses git and wants per-decision diff history
+- Decisions need stable URLs for linking from PRDs or tickets
+- Multiple team members log decisions simultaneously
+
+### File creation rules (both modes)
+
+Never overwrite or modify an existing entry in DECISIONS.md.
+Never overwrite an existing individual decision file.
+Never create or modify a decisions.md index file.
+
+### Section sequence (both modes)
 
 Always produce sections in this exact sequence:
 1. Header block (decision-id, date, status, owner)
-2. ## decision
-3. ## context
-4. ## options-considered
-5. ## chosen-option
-6. ## rationale
-7. ## source (agent mode only, remove if manual)
-8. ## supersession (only if status is superseded)
+2. ### decision (DECISIONS.md) or ## decision (individual file)
+3. ### context or ## context
+4. ### options-considered or ## options-considered
+5. ### chosen-option or ## chosen-option
+6. ### rationale or ## rationale
+7. ### source or ## source (agent mode only)
+8. ### supersession or ## supersession (only if status is superseded)
 9. Optional extension block (commented out unless requested)
+
+Note: DECISIONS.md uses ### for section headers to avoid conflicting
+with the ## entry header. Individual files use ## for section headers.
+
+### Header block format (both modes)
+
+Always use bold field syntax. Do not use YAML frontmatter with ---
+delimiters. Do not use tables.
+
+**decision-id:** DL-YYYY-MM-NNN
+**date:** YYYY-MM-DD
+**status:** accepted
+**owner:** Name or role
 
 ## Mandatory fields (populate all eight)
 
@@ -184,12 +244,12 @@ conversation", "was driving this", "will handle it"), populate the
 name and add [NEEDS REVIEW - ownership implied but not explicitly
 confirmed]. Never drop the [NEEDS REVIEW] flag when ownership is
 ambiguous.
-Example: `Mia [NEEDS REVIEW - ownership implied but not explicitly confirmed]`
+Example: Mia [NEEDS REVIEW - ownership implied but not explicitly confirmed]
 
 ## Agent mode additional rules
 
 When extracting from unstructured input, add a source block after the
-mandatory fields:
+rationale field:
 
 `source-type`: meeting-notes / slack-thread / prd-draft / email / other
 `source-date`: date of the source document if identifiable
@@ -200,8 +260,9 @@ Decision signals to scan for: "we decided", "we will go with",
 "the decision is", "we agreed to", "we are not doing", "we ruled out",
 "going forward we", "we chose", "we rejected".
 
-When multiple decisions appear in one source, produce one file per
-decision with sequential NNN values.
+When multiple decisions appear in one source, produce one entry per
+decision with sequential NNN values. In DECISIONS.md mode, append each
+entry sequentially. In individual file mode, create one file per decision.
 
 ## Supersession rule
 
@@ -238,7 +299,7 @@ order of downstream value for PM teams:
 Do not populate these unless the user requests them or source material
 contains clear content for them.
 
-## Output quality check before writing the file
+## Output quality check before writing
 
 Verify:
 - decision-statement is one sentence and starts with a verb
@@ -251,3 +312,5 @@ Verify:
 - in agent mode: significance gate was applied before generating
 - in manual mode: significance gate skipped, user invocation is
   sufficient confirmation
+- output mode is confirmed to the user before writing
+- section headers use ### in DECISIONS.md and ## in individual files

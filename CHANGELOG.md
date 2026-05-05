@@ -1,6 +1,12 @@
-## [1.0.0] — 2026-04-29
+## [1.0.0] — 2026-05-05
 
 ### Added
+- DECISIONS.md default output mode: appends decisions to a single file
+  in the project root for easier scanning and CLAUDE.md integration
+- Individual file mode available via explicit invocation for git-native
+  teams who want per-decision diff history
+- CLAUDE.md integration tip documented: load DECISIONS.md as automatic
+  project context at session start
 - `decision-log` skill: turns product decisions into structured, searchable
   markdown records committed to git
 - Manual and agent extraction modes with automatic mode detection
