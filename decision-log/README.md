@@ -43,7 +43,7 @@ Slack / docs / meeting notes / transcripts
         ↓  (via MCP-connected tools or direct paste)
 Claude Code · decision-log skill
         ↓
-/decisions/DL-YYYY-MM-NNN-slug.md  (committed to git)
+DECISIONS.md or /decisions/DL-YYYY-MM-NNN-slug.md
         ↓  (linked manually)
 Jira · Linear · Notion · PRDs · roadmap tools · governance docs
 ```
