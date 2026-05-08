@@ -22,6 +22,15 @@ folder before logging decisions.
 **Action:** Document in README as a power user tip, either standalone
 or as part of the BL-018 workflow section.
 
+### BL-029 — MCP server for structured decision querying
+**Finding:** File-based querying works for v1 but limits programmatic
+access from other tools. An MCP server would expose decisions as
+structured data queryable by Cursor, CI pipelines, and other Claude
+instances.
+**Action:** Scope after adoption signal shows file-based approach
+hitting limits. Validate query patterns from real usage first.
+**Priority:** P3 — v2 roadmap item
+
 ---
 
 ## Decisions made during testing
