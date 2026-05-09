@@ -19,7 +19,7 @@ search decisions: onboarding
 ```
 Found 1 decision matching "onboarding"
 
-DL-2026-04-001 — Use Appcues for user onboarding instead of building
+DL-2026-06-001 — Use Appcues for user onboarding instead of building
 an in-house onboarding flow
 Status: accepted | Date: 2026-04-28 | Owner: Head of Product
 Matched in: decision-statement, context
@@ -43,7 +43,7 @@ Found 2 decisions matching "owner: Engineering Lead"
 DL-2026-05-002 — Use Linear for issue tracking instead of Jira
 Status: accepted | Date: 2026-05-05 | Owner: Engineering Lead
 
-DL-2026-04-004 — Use Postgres as primary database instead of MongoDB
+DL-2026-06-004 — Use Postgres as primary database instead of MongoDB
 Status: accepted | Date: 2026-04-29 | Owner: Engineering Lead
 ```
 
@@ -64,7 +64,7 @@ Found 1 decision matching "status: superseded"
 
 DL-2026-03-001 — Use Segment as CDP instead of a custom integration
 Status: superseded | Date: 2026-03-12 | Owner: Head of Product
-Superseded by: DL-2026-04-003
+Superseded by: DL-2026-06-003
 ```
 
 ---
