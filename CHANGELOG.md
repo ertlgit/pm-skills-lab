@@ -1,7 +1,7 @@
 Last release: v1.0.0 — 2026-05-05
 
 ### Added
-- - `decision-query` skill: check PRDs and proposals against existing
+- `decision-query` skill: check PRDs and proposals against existing
   decision records, search by topic or owner, surface decisions due
   for review. Reads both DECISIONS.md and individual /decisions/ files.
   Three modes: check, search, review.
