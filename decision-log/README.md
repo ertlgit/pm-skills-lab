@@ -26,7 +26,7 @@ informs.
 
 1. **Discussion** happens in Slack, a meeting, or a working doc
 2. **A decision is reached** between named alternatives
-3. **This skill preserves it** as a structured markdown record in `/decisions/`
+3. **This skill preserves it** as a structured markdown record in `DECISIONS.md` or `/decisions/`
 4. **The record is linked** from Jira or Linear tickets, PRDs, roadmap
    entries, or governance artifacts
 
