@@ -21,7 +21,7 @@ Found 1 decision matching "onboarding"
 
 DL-2026-06-001 — Use Appcues for user onboarding instead of building
 an in-house onboarding flow
-Status: accepted | Date: 2026-04-28 | Owner: Head of Product
+Status: accepted | Date: 2026-06-28 | Owner: Head of Product
 Matched in: decision-statement, context
 ```
 
@@ -44,7 +44,7 @@ DL-2026-05-002 — Use Linear for issue tracking instead of Jira
 Status: accepted | Date: 2026-05-05 | Owner: Engineering Lead
 
 DL-2026-06-004 — Use Postgres as primary database instead of MongoDB
-Status: accepted | Date: 2026-04-29 | Owner: Engineering Lead
+Status: accepted | Date: 2026-06-29 | Owner: Engineering Lead
 ```
 
 ---
