@@ -246,7 +246,6 @@ npx skills add ertlgit/pm-skills-lab
 
 Re-running the install command updates all skills to the latest version.
 
-
 ---
 
 ## Usage examples
@@ -274,9 +273,11 @@ Maya: three enterprise deals mentioned realtime dashboards last month.
 ```
 
 Claude extracts the decision, identifies both options, derives rationale
-from context, assigns owner, and produces:
+from context, assigns owner, and appends to `DECISIONS.md`:
 
-`DL-2026-04-002-analytics-pipeline-streaming.md`
+```
+## DL-2026-04-002 — analytics-pipeline-streaming
+```
 
 Fields with thin source coverage are marked `[NEEDS REVIEW]` rather than
 fabricated.
@@ -293,6 +294,7 @@ decision-log/
     ├── decision-log-sample.md
     └── decision-log-agent-sample.md
 ```
+
 ---
 
 ## Pair with decision-query
