@@ -40,7 +40,7 @@ choice was made and why.
 
 ```
 Slack / docs / meeting notes / transcripts
-        ↓  (via MCP-connected tools or direct paste)
+        ↓  (via direct paste)
 Claude Code · decision-log skill
         ↓
 DECISIONS.md or /decisions/DL-YYYY-MM-NNN-slug.md
@@ -48,9 +48,9 @@ DECISIONS.md or /decisions/DL-YYYY-MM-NNN-slug.md
 Jira · Linear · Notion · PRDs · roadmap tools · governance docs
 ```
 
-For teams using Claude Code with MCP, source material is passed to the
-skill as context for extraction. MCP handles context ingestion only. The
-git-committed markdown file is the system of record, not the MCP layer.
+Source material is passed to the skill via direct paste. The
+git-committed markdown file is the system of record.
+MCP integration is planned for a future release.
 
 ---
 
