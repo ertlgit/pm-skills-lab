@@ -1,6 +1,7 @@
-Last release: v1.0.0 — 2026-05-05
+Last release: v1.0.0 — 2026-06-19
 
 ### Added
+- `comprehend-first skill` — SHIPPED v1.0.0 (maps to CHANGELOG 1.0.0)
 - `decision-query` skill: check PRDs and proposals against existing
   decision records, search by topic or owner, surface decisions due
   for review. Reads both DECISIONS.md and individual /decisions/ files.

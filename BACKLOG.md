@@ -35,6 +35,7 @@ hitting limits. Validate query patterns from real usage first.
 
 ## Decisions made during testing
 
+- BL-030 — comprehend-first skill — SHIPPED v1.0.0 (maps to CHANGELOG 1.0.0) (done)
 - BL-028 — decision-query skill shipped: check, search, and review modes (done)
 - BL-027 — DECISIONS.md default output mode added, individual files as opt-in (done)
 - BL-024 — What to do with your decisions folder section added (done)

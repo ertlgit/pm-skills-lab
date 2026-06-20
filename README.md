@@ -13,6 +13,7 @@ activates automatically when it detects the right context in your request.
 |-------|-------------|--------|
 | [decision-log](./decision-log/) | Turns product decisions into structured, searchable markdown records committed to git | Available |
 | [decision-query](./decision-query/) | Check PRDs and proposals against existing decisions, search records, and surface decisions due for review | Available |
+| [comprehend-first](./comprehend-first/) | Understand a document before acting on it. Translates each part's real intent, names the traps a shallow reading hits, and stops for your confirmation. | Available |
 
 ---
 
