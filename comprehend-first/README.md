@@ -96,7 +96,7 @@ When evidence is missing, the skill states the unknown and what would resolve it
 
 ## When to use it
 
-Use it when reading the document correctly is the hard part and a misreading would be costly: a brief, an RFP, a PRD or spec, a requirements set, a case study, a board or exec ask, a research paper, a strategy document.
+Use it when reading the document correctly is the hard part and a misreading would be costly: a brief, an RFP, a PRD or spec, a requirements set, a case study, a board or exec ask, a research paper, a strategy document or simply a longer email from a customer, colleague or stakeholder.
 
 It is deliberately not for quick factual lookups, simple summaries, or trivial extraction ("what does this paragraph say," "pull the dates out of this"). Running the full gate on a trivial read wastes effort. The gate is for work where understanding the document's intent is what matters.
 
