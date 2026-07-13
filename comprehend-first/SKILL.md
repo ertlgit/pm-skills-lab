@@ -73,7 +73,7 @@ The output is an intent-translation dossier. Produce its sections in this order:
 3. **Layered jobs** — the four jobs per major section.
 4. **Overall ask** — the whole document's ask in one or two sentences.
 5. **Self-audit** — the comprehension gate run on the dossier, with gaps flagged honestly.
-6. **Stop for confirmation** — a closing line that presents the dossier as a checkpoint and asks the user to confirm or correct before any work proceeds.
+6. **Checkpoint** — the dossier's final block, and the last thing printed. In a terminal the closing screen is all the user sees at rest, and the user is being asked to confirm a reading, so the checkpoint must carry that reading in miniature rather than point back at scrolled-away sections. Its shape: a horizontal rule; a bold header line **Checkpoint — confirm before any work begins**; the real ask in one or two lines, phrased against the literal ask where the two differ; up to three one-line trap callouts — the misreadings the dossier caught, each in the shape "says X — actually asks Y"; then at most three numbered one-line questions covering only the decisions that would change the work. Close with the line "No work begins until you confirm or correct this reading." and print nothing after it. The whole block stays under roughly fifteen lines; it digests the sections above and introduces nothing new.
 
 Per-unit schema, all ten fields:
 
@@ -129,6 +129,7 @@ Verify:
 - The document's overall ask is stated in one or two sentences
 - The comprehension gate and the function tests were applied, and any fail was reworked
 - The dossier stops for the user; no downstream work was produced
+- The dossier ends with the checkpoint digest — rule, bold header, real ask, trap callouts, numbered questions, closing gate line — with nothing printed after it and nothing in it that is new
 
 ---
 

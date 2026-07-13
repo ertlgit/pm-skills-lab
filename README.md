@@ -14,6 +14,12 @@ Slack and re-litigated six months later because nobody remembers the
 rationale. These skills fix both: comprehension before action, and
 decisions as searchable records committed to git.
 
+![comprehend-first reads an exec brief, translates its real intent, and stops at a checkpoint before any work begins](./assets/demo.gif)
+
+*comprehend-first on an exec brief: the real ask vs. the literal ask, the
+traps a shallow reading would hit, and a checkpoint — no work begins until
+you confirm the reading.*
+
 ---
 
 ## Install

@@ -16,7 +16,7 @@ Nine checks. Any fail triggers rework, not progression.
 6. **On its own terms (de-bias).** The document is read for what it asks before it is mapped to any preferred answer or solution. A reading bent toward a desired output is sent back.
 7. **Evidence honesty.** Load-bearing claims carry a confidence tag and a source; anything that will carry weight downstream is marked for verification before it is relied on.
 8. **Scope fidelity (no drift).** The reading stays an answer to *this* document. Places where a plausible response would drift off-topic are flagged.
-9. **Stop for confirmation.** The dossier is presented as a checkpoint, and work stops for the user to confirm or correct before anything is acted on.
+9. **Stop for confirmation.** The dossier ends with the checkpoint digest — rule, bold header, the real ask against the literal ask, up to three "says X — actually asks Y" trap callouts, at most three numbered questions, the closing gate line — with nothing printed after it, and work stops for the user to confirm or correct before anything is acted on.
 
 ---
 

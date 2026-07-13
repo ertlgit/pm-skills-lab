@@ -147,13 +147,28 @@ Turn a precisely-defined activation problem into a small set of developed, prior
 - **On its own terms:** pass. The brief is read before any preferred solution is mapped onto it.
 - **Evidence honesty:** pass. The load-bearing facts (current rate, stall point) are flagged for verification, not assumed.
 - **Scope fidelity:** pass, and actively enforced in Unit 6.
-- **Stop for confirmation:** this dossier stops here.
+- **Stop for confirmation:** this dossier ends at the checkpoint below.
 
 **Gaps I am flagging:** the whole reading rests on two unknowns I cannot resolve from the brief alone, the current seven-day activation rate and its segment distribution, and where workspaces
 actually stall before a first share. Both are `[?]`. Until they are supplied, any initiative is a hypothesis about a stall point I have not confirmed, and the prioritisation's impact assessments are directional at best. I would resolve these before proposing the set.
 
 ---
 
-## Part 5 — Stop for confirmation
+## Part 5 — Checkpoint
 
-This is a checkpoint, not the answer. Confirm or correct this reading, and supply the two flagged unknowns if you can, before I propose, prioritise, or measure anything. Acting on the brief is the next step, and a separate one.
+The dossier's final block, printed last so the closing screen carries the reading in miniature:
+
+---
+
+**Checkpoint — confirm before any work begins**
+
+Literal ask: three initiatives, a ranking, metrics, a 30-day plan. Real ask: a small set of developed, prioritised, measurable initiatives that move one exact event — first dashboard shared within seven days — inside the self-serve model.
+
+- Says "prioritisation must reference impact, effort, and self-serve fit" — actually the open rubric: assess every initiative against all three and let the order follow.
+- Says "propose a minimum of three initiatives" — actually asks for three developed initiatives, each with a mechanism and a definition of done, not three labels.
+- Says "improve activation" — actually one defined event; anything that moves a neighbour metric (logins, dashboards created) is off-target.
+
+1. What is the current seven-day activation rate, and its distribution by segment?
+2. Where do workspaces actually stall before a first share?
+
+No work begins until you confirm or correct this reading.

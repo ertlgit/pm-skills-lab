@@ -2,6 +2,18 @@
 
 All notable changes to `comprehend-first` are recorded here.
 
+## [1.1.0] — 2026-07-14
+
+### Changed
+- The dossier now ends with a checkpoint digest instead of a free-form
+  closing line: horizontal rule, bold header, the real ask phrased
+  against the literal ask, up to three "says X — actually asks Y" trap
+  callouts, at most three numbered questions, and the closing gate line,
+  with nothing printed after it. Rationale: in a terminal the closing
+  screen is all the user sees at rest, and confirming a reading requires
+  the reading to be visible — a checkpoint that only asks questions
+  invites rubber-stamping.
+
 ## [1.0.1] — 2026-07-13
 
 ### Changed

@@ -6,6 +6,12 @@ An agent skill that makes your coding agent understand a document before acting 
 > produce the deliverable. Acting on the document is a separate step that starts only
 > after you confirm the reading.
 
+![comprehend-first reads an exec brief, translates its real intent, and stops at a checkpoint before any work begins](../assets/demo.gif)
+
+*The skill on an exec brief: the real ask vs. the literal ask, the traps a
+shallow reading would hit, and a checkpoint — no work begins until you
+confirm the reading.*
+
 ---
 
 ## Why this exists
@@ -177,9 +183,21 @@ Trap: generic milestones disconnected from the specific migration.
 
 OVERALL ASK: choose a CI/CD platform on a defended assessment against three named criteria, and show a rollout that de-risks the switch.
 
-GAPS FLAGGED: the candidate set and the current toolchain are not in the brief [?].
+──────────────────────────────────────────────
+CHECKPOINT — confirm before any work begins
 
-This is a checkpoint. Confirm or correct this reading, and supply the candidate set, before I evaluate platforms or write milestones.
+Real ask: a platform choice that follows from the assessment, not a
+choice with three criteria attached to it afterward.
+
+- Says "must weigh cost, migration effort, and developer experience" —
+  actually asks for a defended assessment against each, not three name-checks.
+- Says "include rollout milestones" — actually asks for a sequence that
+  de-risks this specific migration.
+
+1. What platforms are in the candidate set? [not in the brief]
+2. What is the current toolchain and team capacity? [not in the brief]
+
+No work begins until you confirm or correct this reading.
 ```
 
 ---
