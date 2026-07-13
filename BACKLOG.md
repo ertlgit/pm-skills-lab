@@ -4,23 +4,17 @@ Open improvements and known gaps. Items ordered by priority.
 
 ---
 
-## P3 — Planned for v1.1
+## Open — P3
 
-### BL-018 — Workflow guidance missing from README
-**Finding:** No guidance exists for PMs on setting up a repeatable
-decision logging routine across projects. Common patterns include
-a global decisions folder with a shell alias and CLAUDE.md project
-integration for automatic folder targeting.
-**Action:** Add a Workflows section to decision-log/README.md covering:
-project-anchored workflow, centralized decisions folder with shell
-alias, and CLAUDE.md integration as a power user tip.
-
-### BL-022 — CLAUDE.md project integration not documented
-**Finding:** PMs using Claude Code projects can set a default decisions
-folder path in CLAUDE.md, removing the need to cd into a specific
-folder before logging decisions.
-**Action:** Document in README as a power user tip, either standalone
-or as part of the BL-018 workflow section.
+### BL-018 — Centralized decisions folder pattern not documented
+**Finding:** decision-log/README.md now covers the project-anchored
+workflow ("What to do with your decisions folder") and instructions-file
+integration ("Project integration tip"), but the cross-project pattern —
+one global decisions folder targeted via a shell alias — is still
+undocumented.
+**Action:** Add the centralized-folder-with-shell-alias pattern to the
+decision-log README, next to the project integration tip. (Original
+scope narrowed 2026-07-14; the other two workflow items shipped.)
 
 ### BL-029 — MCP server for structured decision querying
 **Finding:** File-based querying works for v1 but limits programmatic
@@ -35,6 +29,9 @@ hitting limits. Validate query patterns from real usage first.
 
 ## Decisions made during testing
 
+- BL-032 — terminal demo GIF recorded and embedded in root and comprehend-first READMEs (done)
+- BL-031 — comprehend-first dossier ends with checkpoint digest — SHIPPED v1.1.0 (maps to CHANGELOG 1.1.0) (done)
+- BL-022 — CLAUDE.md project integration documented ("Project integration tip", generalized to all agents) (done)
 - BL-030 — comprehend-first skill — SHIPPED v1.0.0 (maps to CHANGELOG 1.0.0) (done)
 - BL-028 — decision-query skill shipped: check, search, and review modes (done)
 - BL-027 — DECISIONS.md default output mode added, individual files as opt-in (done)
