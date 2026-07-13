@@ -4,7 +4,7 @@ description: "Work with existing decision records. Use this skill to check a PRD
 license: "MIT — see LICENSE in pm-skills-lab repo"
 ---
 
-# decision-query Skill for Claude Code
+# decision-query skill
 
 ## What this skill does
 

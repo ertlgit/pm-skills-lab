@@ -1,17 +1,19 @@
 # Contributing to pm-skills-lab
 
 Thanks for your interest in contributing. This repo is a curated collection
-of Claude Code skills for product managers. Contributions are welcome if they
-meet the quality bar below.
+of agent skills for product managers, usable from Claude Code, Cursor,
+Codex CLI, and other agents that support the skills format. Contributions
+are welcome if they meet the quality bar below.
 
 ---
 
 ## What makes a good contribution
 
 A skill is worth adding if it:
-- Solves a real, recurring PM problem that Claude Code can meaningfully help with
+- Solves a real, recurring PM problem that a coding agent can meaningfully help with
 - Is not already covered by an existing skill in this repo
-- Produces a concrete, usable output (a file, a record, a structured artifact)
+- Produces a concrete, usable output (a file, a record, or a structured
+  checkpoint the PM acts on)
 - Works reliably in both manual and agent modes where applicable
 - Stays lightweight — no backends, no APIs, no complex dependencies
 
@@ -44,7 +46,8 @@ Include:
 - What input you provided
 - What output you got
 - What output you expected
-- Claude Code version if known
+- Which agent you use (Claude Code, Cursor, Codex CLI, ...) and its
+  version if known
 
 ---
 
@@ -54,9 +57,11 @@ Include:
 2. Create a folder under the repo root named after your skill,
    using kebab-case: `my-skill-name/`
 3. Your skill folder must contain at minimum:
-   - `SKILL.md` — activation rules, field definitions, output behavior
-   - One template file
+   - `SKILL.md` — activation rules, output definition, output behavior
    - One worked example in an `examples/` subfolder
+   - A template or reference files where the skill's output follows a
+     fixed structure (see decision-log for a template-based skill and
+     comprehend-first for a reference-based one)
 4. Add a one-line entry to the skills table in the root `README.md`
 5. Open a PR with a short description of what the skill does and
    why it is differentiated from existing skills
@@ -67,8 +72,9 @@ Include:
 
 - [ ] SKILL.md has a clear activation trigger that does not over-fire
 - [ ] SKILL.md has a significance gate or equivalent scope boundary
-- [ ] Output is a concrete markdown file, not a chat response
-- [ ] Template matches the field definitions in SKILL.md exactly
+- [ ] Output is a concrete, reusable artifact — a committed file or a
+      structured checkpoint output — not free-form chat
+- [ ] Templates or reference files match the definitions in SKILL.md exactly
 - [ ] At least one worked example shows realistic output
 - [ ] No invented metrics, fabricated outputs, or overclaimed scope
 - [ ] No external dependencies required to use the skill

@@ -4,7 +4,7 @@ description: Create structured product decision records committed to git. Use th
 license: MIT — see LICENSE in pm-skills-lab repo
 ---
 
-# Decision Log Skill for Claude Code
+# Decision Log skill
 
 ## What this skill does
 
@@ -15,8 +15,8 @@ across the product org.
 
 Works in two modes:
 - Manual: PM provides decision details directly
-- Agent: Claude extracts from unstructured input (meeting notes, Slack
-  threads, PRD drafts, discussion summaries)
+- Agent: the decision is extracted from unstructured input (meeting
+  notes, Slack threads, PRD drafts, discussion summaries)
 
 ## How mode is determined
 
@@ -104,7 +104,8 @@ DECISIONS.md header (create once, never overwrite):
 # Decision Log
 
 This file is maintained by the decision-log skill.
-Reference it in CLAUDE.md to load decisions as project context.
+Reference it in your agent's project instructions file (CLAUDE.md,
+AGENTS.md, or .cursor/rules) to load decisions as project context.
 
 ---
 ```

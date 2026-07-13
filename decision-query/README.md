@@ -1,8 +1,9 @@
 # decision-query
 
-A Claude Code skill that helps product managers work with existing decision
+An agent skill that helps product managers work with existing decision
 records. Check PRDs and proposals for conflicts, search decisions by topic
-or owner, and surface decisions due for review.
+or owner, and surface decisions due for review. Works with Claude Code,
+Cursor, Codex CLI, and other agents that support the skills format.
 
 > This skill is read-only. It never modifies decision records. Use
 > [decision-log](../decision-log/) to create or update records.
@@ -81,11 +82,13 @@ use decision-log to start logging decisions.
 npx skills add ertlgit/pm-skills-lab
 ```
 
-Select the skills you want to install from the interactive prompt.
-Claude Code will activate them automatically when it detects the right
+Select the skills you want to install from the interactive prompt. The
+installer places each skill where your agent expects it — Claude Code,
+Cursor, Codex CLI, and 20+ other agents are supported. Your agent
+activates installed skills automatically when it detects the right
 context in your request.
 
-### Manual install
+### Manual install (Claude Code)
 
 ```bash
 mkdir -p ~/.claude/skills/decision-query
@@ -94,13 +97,9 @@ cp decision-query/SKILL.md ~/.claude/skills/decision-query/SKILL.md
 
 ### Verify installation
 
-Open Claude Code in any project folder and run:
-
-```
-/skills
-```
-
-You should see the installed skills listed under available skills.
+In Claude Code, open any project folder and run `/skills` — the
+installed skills appear under available skills. On other agents, the
+`npx skills add` output lists where each skill was installed.
 
 ### Update to latest version
 

@@ -1,14 +1,14 @@
 ---
 name: comprehend-first
-description: "Use this skill whenever the user hands Claude a document (brief, spec, PRD, RFP, requirements, case study, board ask, strategy doc) and asks Claude to act on it. Translates what each part actually asks (its intent, not its literal wording), names the traps a shallow reading hits, and stops for the user to confirm understanding before work begins. For depth-critical or intent-heavy documents, not quick lookups or summaries. Invocation: 'comprehend first:', 'comprehend this brief:'."
+description: "Use this skill whenever the user hands the agent a document (brief, spec, PRD, RFP, requirements, case study, board ask, strategy doc) and asks the agent to act on it. Translates what each part actually asks (its intent, not its literal wording), names the traps a shallow reading hits, and stops for the user to confirm understanding before work begins. For depth-critical or intent-heavy documents, not quick lookups or summaries. Invocation: 'comprehend first:', 'comprehend this brief:'."
 license: "MIT — see LICENSE in pm-skills-lab repo"
 ---
 
-# comprehend-first Skill for Claude Code
+# comprehend-first skill
 
 ## What this skill does
 
-Makes Claude understand a document before acting on it. Claude atomises a brief, spec, RFP, or similar, translates what each part is actually asking (its intent, not its literal wording), surfaces the traps a shallow reading hits, runs a self-check, produces an intent-translation dossier, and stops for the user to confirm or correct the reading before any work begins.
+Makes the agent understand a document before acting on it. The agent atomises a brief, spec, RFP, or similar, translates what each part is actually asking (its intent, not its literal wording), surfaces the traps a shallow reading hits, runs a self-check, produces an intent-translation dossier, and stops for the user to confirm or correct the reading before any work begins.
 
 It defeats one failure: **specification literalism, satisfying the visible form of a requirement while missing its function.** "Justification must reference the three criteria" becomes "name the three criteria"; "propose three initiatives" becomes "list three." Caught at the reading stage this is cheap to fix. Left uncaught it compounds, because every later pass polishes the form and never repairs the missing function.
 
@@ -18,7 +18,7 @@ This is a single-job skill. It ends at understanding. Prioritising, deciding wha
 
 ## When to activate this skill
 
-Activate when the user hands Claude a document and expects work built on it, and reading it correctly is the hard part.
+Activate when the user hands the agent a document and expects work built on it, and reading it correctly is the hard part.
 
 Document-and-act signals (a document is present, plus a request to act on it):
 - "work from this brief / spec / RFP / PRD / requirements / case study"
@@ -46,7 +46,7 @@ When it is unclear whether a document is depth-critical, run the comprehension p
 
 ## What the skill takes as authority
 
-The document in front of Claude is the only authority. Nothing from prior work, Claude's assumptions, or a preferred answer is inherited as settled. Verified facts may re-enter later as marked evidence; no prior conclusion enters as truth.
+The document in front of the agent is the only authority. Nothing from prior work, the agent's assumptions, or a preferred answer is inherited as settled. Verified facts may re-enter later as marked evidence; no prior conclusion enters as truth.
 
 The skill is brief-agnostic. Read whatever criteria the document states or implies, and let its own structure shape the dossier. Do not impose a fixed rubric, a fixed number of sections, or a template borrowed from another document. The schema and the gate are universal; the criteria, the structure, and the content come from the document at hand.
 
@@ -134,4 +134,4 @@ Verify:
 
 ## Where this stops
 
-This skill ends at "document understood and confirmed." It does not prioritise, decide what to build, design the artefact, or produce the deliverable. Those are separate steps. Its only job is to make sure Claude and the user share an accurate reading of the document before the real work begins.
+This skill ends at "document understood and confirmed." It does not prioritise, decide what to build, design the artefact, or produce the deliverable. Those are separate steps. Its only job is to make sure the agent and the user share an accurate reading of the document before the real work begins.

@@ -1,6 +1,6 @@
 # comprehend-first
 
-A Claude Code skill that makes Claude understand a document before acting on it. It translates what each part of a brief, spec, or RFP is actually asking, surfaces the traps a shallow reading hits, and stops for your confirmation before any work begins.
+An agent skill that makes your coding agent understand a document before acting on it. It translates what each part of a brief, spec, or RFP is actually asking, surfaces the traps a shallow reading hits, and stops for your confirmation before any work begins. Works with Claude Code, Cursor, Codex CLI, and other agents that support the skills format.
 
 > This skill ends at understanding. It does not prioritise, decide what to build, or
 > produce the deliverable. Acting on the document is a separate step that starts only
@@ -10,9 +10,9 @@ A Claude Code skill that makes Claude understand a document before acting on it.
 
 ## Why this exists
 
-You hand Claude a brief, a spec, or an RFP and ask it to work from it. It reads the surface, acts on the literal wording, and produces something that satisfies the words while missing what the document was actually asking for. "Justification must reference the three criteria" becomes "name the three criteria." The gap is invisible until someone who knows the brief pushes on it.
+You hand your agent a brief, a spec, or an RFP and ask it to work from it. It reads the surface, acts on the literal wording, and produces something that satisfies the words while missing what the document was actually asking for. "Justification must reference the three criteria" becomes "name the three criteria." The gap is invisible until someone who knows the brief pushes on it.
 
-This skill forces a different first move. Before any work, Claude treats the document as the only authority, translates what each part is actually asking, surfaces where a shallow reading would fail, and stops for you to confirm it understood the document before building anything on top of it. Caught at the reading stage, a misreading is cheap to fix. Left uncaught, it compounds, because every later pass polishes the form and never repairs the missing function.
+This skill forces a different first move. Before any work, the agent treats the document as the only authority, translates what each part is actually asking, surfaces where a shallow reading would fail, and stops for you to confirm it understood the document before building anything on top of it. Caught at the reading stage, a misreading is cheap to fix. Left uncaught, it compounds, because every later pass polishes the form and never repairs the missing function.
 
 ---
 
@@ -23,7 +23,7 @@ This skill forces a different first move. Before any work, Claude treats the doc
 3. **This skill reads it first** — atomises it, translates each part's real intent, names the traps, and stops for your confirmation
 4. **You confirm or correct the reading** — then the real work begins on a shared, accurate understanding instead of a guess
 
-The skill operates between step 1 and step 2. It is not a summariser, a research tool, or a deliverable generator. It establishes that you and Claude are reading the document the same way before anything depends on it.
+The skill operates between step 1 and step 2. It is not a summariser, a research tool, or a deliverable generator. It establishes that you and your agent are reading the document the same way before anything depends on it.
 
 ---
 
@@ -31,8 +31,8 @@ The skill operates between step 1 and step 2. It is not a summariser, a research
 
 ```
 brief / spec / RFP / PRD / case study / strategy doc
-        ↓  (handed to Claude, or pasted)
-Claude Code · comprehend-first skill
+        ↓  (handed to the agent, or pasted)
+coding agent · comprehend-first skill
         ↓
 intent-translation dossier   →   you confirm or correct
         ↓
@@ -45,13 +45,13 @@ The dossier is the checkpoint. Nothing downstream is produced until you confirm 
 
 ## How it works
 
-One job, one move. Hand Claude a document and ask it to work from it. On depth-critical or intent-heavy documents the skill activates on its own. You can also invoke it directly:
+One job, one move. Hand your agent a document and ask it to work from it. On depth-critical or intent-heavy documents the skill activates on its own. You can also invoke it directly:
 
 ```
-comprehend first: [paste the document, or point Claude at the file]
+comprehend first: [paste the document, or point the agent at the file]
 ```
 
-Claude treats the document as the only authority, breaks it into units, and translates each one before doing anything with it. The criteria and structure come from the document in front of you; the skill imposes no fixed rubric or template.
+The agent treats the document as the only authority, breaks it into units, and translates each one before doing anything with it. The criteria and structure come from the document in front of you; the skill imposes no fixed rubric or template.
 
 ---
 
@@ -102,9 +102,9 @@ It is deliberately not for quick factual lookups, simple summaries, or trivial e
 
 ---
 
-## Claude Code integration tip
+## Project integration tip
 
-Reference this skill in your project's `CLAUDE.md` so Claude runs the comprehension gate before acting on any document you hand it:
+Reference this skill in your project's instructions file — `CLAUDE.md` (Claude Code), `AGENTS.md` (Codex CLI), or a rule in `.cursor/rules` (Cursor) — so the agent runs the comprehension gate before acting on any document you hand it:
 
 ```
 ## Working from documents
@@ -123,9 +123,9 @@ This makes accurate comprehension the default first step of any document-driven 
 npx skills add ertlgit/pm-skills-lab
 ```
 
-Select the skills you want to install from the interactive prompt. Claude Code will activate them automatically when it detects the right context in your request.
+Select the skills you want to install from the interactive prompt. The installer places each skill where your agent expects it — Claude Code, Cursor, Codex CLI, and 20+ other agents are supported. Your agent activates installed skills automatically when it detects the right context in your request.
 
-### Manual install
+### Manual install (Claude Code)
 
 This skill loads its method and gate from `references/`, so copy the whole folder, not just `SKILL.md`:
 
@@ -137,13 +137,7 @@ cp -r comprehend-first/SKILL.md comprehend-first/references comprehend-first/exa
 
 ### Verify installation
 
-Open Claude Code in any project folder and run:
-
-```
-/skills
-```
-
-You should see the installed skills listed under available skills.
+In Claude Code, open any project folder and run `/skills` — the installed skills appear under available skills. On other agents, the `npx skills add` output lists where each skill was installed.
 
 ### Update to latest version
 

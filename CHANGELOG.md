@@ -1,7 +1,43 @@
-Last release: v1.0.0 — 2026-06-19
+# Changelog
+
+All notable changes to `pm-skills-lab` are recorded here. The format is
+based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
+Individual skills keep their own changelog where they version
+independently (see `comprehend-first/CHANGELOG.md`).
+
+## [1.1.0] — 2026-07-13
 
 ### Added
-- `comprehend-first skill` — SHIPPED v1.0.0 (maps to CHANGELOG 1.0.0)
+- Cross-agent support documented: the repo is now positioned as agent
+  skills for Claude Code, Cursor, Codex CLI, and other agents supported
+  by the `npx skills` installer
+- Per-agent notes in the root README: project instructions file per
+  agent (CLAUDE.md, AGENTS.md, .cursor/rules) and how to verify installs
+- Root README toolchain diagram showing how the three skills chain
+  together (comprehend-first → work → decision-log → decision-query)
+- Badges in the root README: license, skill count, supported agents,
+  last commit
+- GitHub issue templates for Bug Report and Feature Request, matching
+  the fields CONTRIBUTING.md asks for
+
+### Changed
+- Root README restructured: value proposition and install instructions
+  moved to the top, skills table reordered to workflow order with
+  comprehend-first first, plus a worked comprehend-first example
+- SKILL.md files reworded agent-agnostically ("the agent" instead of
+  "Claude") so they read correctly in any host agent
+- Skill README integration tips generalized from CLAUDE.md-only to all
+  supported agents' instructions files
+- CONTRIBUTING quality checklist updated: skill output may be a committed
+  file or a structured checkpoint output, and reference files are
+  accepted alongside templates
+- This changelog restructured to Keep a Changelog format
+
+## [1.0.0] — 2026-06-19
+
+### Added
+- `comprehend-first` skill: a comprehension-and-confirmation gate for
+  working from documents (see `comprehend-first/CHANGELOG.md`)
 - `decision-query` skill: check PRDs and proposals against existing
   decision records, search by topic or owner, surface decisions due
   for review. Reads both DECISIONS.md and individual /decisions/ files.

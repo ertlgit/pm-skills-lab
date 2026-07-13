@@ -2,6 +2,15 @@
 
 All notable changes to `comprehend-first` are recorded here.
 
+## [1.0.1] — 2026-07-13
+
+### Changed
+- SKILL.md and README reworded agent-agnostically ("the agent" instead
+  of "Claude") so the skill reads correctly in Cursor, Codex CLI, and
+  other host agents alongside Claude Code. No behavioral change.
+- README integration tip generalized from CLAUDE.md-only to all
+  supported agents' project instructions files.
+
 ## [1.0.0] — 2026-06-19
 
 Initial release.

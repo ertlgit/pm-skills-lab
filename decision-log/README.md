@@ -1,7 +1,8 @@
 # decision-log
 
-A Claude Code skill that turns product decisions into structured, searchable
-markdown records committed to git.
+An agent skill that turns product decisions into structured, searchable
+markdown records committed to git. Works with Claude Code, Cursor, Codex
+CLI, and other agents that support the skills format.
 
 > This skill is used when a team discussion reaches a decision and that
 > decision needs to be preserved in a durable, searchable format before it
@@ -41,7 +42,7 @@ choice was made and why.
 ```
 Slack / docs / meeting notes / transcripts
         ↓  (via direct paste)
-Claude Code · decision-log skill
+coding agent · decision-log skill
         ↓
 DECISIONS.md or /decisions/DL-YYYY-MM-NNN-slug.md
         ↓  (linked manually)
@@ -56,12 +57,12 @@ MCP integration is planned for a future release.
 
 ## Two modes
 
-**Manual** — PM provides the decision details directly. Claude structures
-the output and writes the file.
+**Manual** — PM provides the decision details directly. The agent
+structures the output and writes the file.
 
 **Agent** — PM pastes unstructured input (Slack thread, meeting notes, PRD
-draft). Claude extracts the decision, populates all fields it can confirm,
-marks uncertain fields `[NEEDS REVIEW]`, and writes the file.
+draft). The agent extracts the decision, populates all fields it can
+confirm, marks uncertain fields `[NEEDS REVIEW]`, and writes the file.
 
 When source material is thin, the skill marks uncertain fields
 `[NEEDS REVIEW]` rather than generating plausible-sounding but
@@ -96,10 +97,11 @@ log decision (new file): [input]
 
 ---
 
-## Claude Code integration tip
+## Project integration tip
 
-Reference `DECISIONS.md` in your project's `CLAUDE.md` to load all
-decisions as context at the start of every Claude Code session:
+Reference `DECISIONS.md` in your project's instructions file — `CLAUDE.md`
+(Claude Code), `AGENTS.md` (Codex CLI), or a rule in `.cursor/rules`
+(Cursor) — to load all decisions as context at the start of every session:
 
 ```
 ## Decision log
@@ -109,8 +111,8 @@ recommendation, read DECISIONS.md and flag any conflicts with existing
 decisions.
 ```
 
-This turns your decision log into an active constraint layer. Claude
-Code will automatically surface conflicts between new work and prior
+This turns your decision log into an active constraint layer. Your agent
+will automatically surface conflicts between new work and prior
 decisions without you needing to invoke decision-query manually.
 
 ---
@@ -146,7 +148,7 @@ log decision from slack: [paste thread]
 log decision from meeting notes: [paste notes]
 ```
 
-Using a consistent phrase helps Claude activate the skill reliably and
+Using a consistent phrase helps the agent activate the skill reliably and
 signals clearly to teammates what invocation pattern to follow.
 
 ---
@@ -197,7 +199,7 @@ stays intact.
 
 **When something feels wrong**
 Before committing to a direction, scan the decisions folder manually or
-paste your proposal into Claude Code and ask: "Does anything in
+paste your proposal into your agent and ask: "Does anything in
 /decisions/ conflict with this?" That is the fastest way to catch
 contradictions before they ship.
 
@@ -217,11 +219,13 @@ logging decisions that will matter later.
 npx skills add ertlgit/pm-skills-lab
 ```
 
-Select the skills you want to install from the interactive prompt.
-Claude Code will activate them automatically when it detects the right
+Select the skills you want to install from the interactive prompt. The
+installer places each skill where your agent expects it — Claude Code,
+Cursor, Codex CLI, and 20+ other agents are supported. Your agent
+activates installed skills automatically when it detects the right
 context in your request.
 
-### Manual install
+### Manual install (Claude Code)
 
 ```bash
 mkdir -p ~/.claude/skills/decision-log
@@ -230,13 +234,9 @@ cp decision-log/SKILL.md ~/.claude/skills/decision-log/SKILL.md
 
 ### Verify installation
 
-Open Claude Code in any project folder and run:
-
-```
-/skills
-```
-
-You should see the installed skills listed under available skills.
+In Claude Code, open any project folder and run `/skills` — the
+installed skills appear under available skills. On other agents, the
+`npx skills add` output lists where each skill was installed.
 
 ### Update to latest version
 
@@ -272,8 +272,8 @@ Maya: three enterprise deals mentioned realtime dashboards last month.
       Let's go with streaming. Luca owns it.
 ```
 
-Claude extracts the decision, identifies both options, derives rationale
-from context, assigns owner, and appends to `DECISIONS.md`:
+The agent extracts the decision, identifies both options, derives
+rationale from context, assigns owner, and appends to `DECISIONS.md`:
 
 ```
 ## DL-2026-04-002 — analytics-pipeline-streaming
